@@ -10,4 +10,9 @@ opponent :: Player -> Player
 opponent Black = White
 opponent White = Black
 
-type PPiece = [(Piece,Player,Point)]
+type PPiece = (Piece,Player,Point)
+type PPieceSet = [PPiece]
+
+boundaryCheck :: PPiece-> Bool 
+boundaryCheck (_,_,p) = checker p
+where checker 
