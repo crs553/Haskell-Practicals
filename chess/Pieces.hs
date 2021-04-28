@@ -15,4 +15,4 @@ type PPieceSet = [PPiece]
 
 boundaryCheck :: PPiece-> Bool 
 boundaryCheck (_,_,p) = checker p
-where checker 
+where checker p = Nothing 
