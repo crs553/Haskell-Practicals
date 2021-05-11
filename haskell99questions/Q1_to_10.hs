@@ -20,7 +20,17 @@ myReverse :: [a] -> [a]
 myReverse = foldl (flip (:)) []
 
 
---isPlaindrome
+--P6
 isPalindrome' []  = True
 isPalindrome' [_] = True
 isPalindrome' xs  = (head xs) == (last xs) && (isPalindrome' $ init $ tail xs)
+
+--P7
+
+--P8
+compress :: Eq a => [a] -> [a]
+compress (x:ys@(y:_))
+    | x == y = compress ys
+    | otherwise = x : compress ys
+compress ys = ys
+
