@@ -11,7 +11,7 @@ data Point =
 
 data Position = Start | Plcd Point deriving (Eq)
 
-data Piece = Piece {pos :: Maybe Point, plyr:: Player}
+data Piece = Piece {pos :: Position, plyr:: Player} deriving (Eq)
 
 getOppo:: Player -> Player
 getOppo O = X
@@ -29,3 +29,6 @@ placePiece 3 2 = Plcd Sq32
 placePiece 3 3 = Plcd Sq33
 placePiece _ _ = Start 
 
+type Placing = [Piece]
+
+data GameState = GameState {pce :: Placing, plyer :: Player} deriving (Eq)
